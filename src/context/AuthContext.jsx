@@ -51,13 +51,8 @@ export const AuthProvider = ({ children }) => {
     // حفظ التوكن في الكوكيز لمدة 7 أيام
     Cookies.set("token", userToken, { expires: 7 });
 
-    // التوجه للمسار الجديد
-    window.location.href = window.location.origin + redirectPath;
-
-    // ضمان إضافي لعمل Reload قوي لتنظيف الـ Network
-    setTimeout(() => {
-      window.location.reload(true);
-    }, 100);
+    // التوجه للمسار الجديد مباشرة وبأمان
+    window.location.href = redirectPath;
   };
 
   const logout = () => {
@@ -66,13 +61,8 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem("user");
     Cookies.remove("token");
 
-    // التوجه للصفحة الرئيسية
-    window.location.href = window.location.origin + "/";
-
-    // ضمان إضافي لعمل Reload
-    setTimeout(() => {
-      window.location.reload(true);
-    }, 100);
+    // التوجه للصفحة الرئيسية مباشرة
+    window.location.href = "/";
   };
 
   return (
