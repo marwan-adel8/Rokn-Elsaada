@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  --font-cairo: "Cairo", sans-serif;
+  --font-headline-lg: "Cairo", sans-serif;
+  --font-headline-md: "Cairo", sans-serif;
+  --font-display-lg: "Cairo", sans-serif;
+  --font-price-lg: "Cairo", sans-serif;
+  
+  --font-label-md: "Almarai", sans-serif;
+  --font-body-lg: "Almarai", sans-serif;
+  --font-body-md: "Almarai", sans-serif;
+
+  --text-display-lg: 48px;
+  --text-display-lg--line-height: 60px;
+  --text-display-lg--font-weight: 700;
+
+  --text-headline-lg: 32px;
+  --text-headline-lg--line-height: 44px;
+  --text-headline-lg--font-weight: 600;
+
+  --text-headline-md: 24px;
+  --text-headline-md--line-height: 32px;
+  --text-headline-md--font-weight: 600;
+
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 28px;
+  --text-body-lg--font-weight: 400;
+
+  --text-label-md: 14px;
+  --text-label-md--line-height: 20px;
+  --text-label-md--font-weight: 700;
+
+  --color-background: #fff8f5;
+  --color-on-background: #1e1b18;
+  --color-primary: #8a4853;
+  --color-primary-container: #a6606b;
+  --color-surface-container-low: #fbf2ed;
+  --color-surface-container: #f5ece7;
+  --color-secondary-container: #eddec5;
+  --color-on-secondary-container: #6c614e;
+  --color-outline-variant: #d7c1c3;
+  --color-surface: #fff8f5;
+  --color-on-surface: #1e1b18;
+  --color-on-surface-variant: #524345;
+  --color-tertiary: #705741;
+  --color-tertiary-container: #8a6f58;
+
+  --spacing-gutter: 24px;
+  --spacing-margin-desktop: 64px;
+  --spacing-section-padding: 80px;
+  --spacing-container-max: 1280px;
+}
+
+@layer base {
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}
