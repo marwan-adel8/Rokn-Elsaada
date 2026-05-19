@@ -37,7 +37,6 @@ const Signup = () => {
       const { token, ...user } = loginRes.data;
 
       // 3. Login with reload - always go to Home after signup
-      console.log("Signup success, calling login with reload to Home");
       login(user, token, "/");
     } catch (err) {
       const errorMessage = err.response?.data?.message || "فشل إنشاء الحساب. تأكد من البيانات.";

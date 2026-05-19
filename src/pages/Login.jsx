@@ -18,27 +18,16 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-
-    console.log("Sending login request with:", formData); // للتأكد من البيانات المرسلة
-
     try {
       const res = await axios.post("/auth/login", formData);
-      console.log("Login Success:", res.data);
 
       // الباك اند بيبعت التوكن مع بيانات المستخدم في نفس الـ Object
       const { token, ...user } = res.data;
 
       // تحديد الصفحة المطلوبة حسب نوع المستخدم وعمل reload
       const redirectPath = user.role === "admin" ? "/admin/dashboard" : "/";
-      console.log(
-        "Login success, role:",
-        user.role,
-        "redirecting to:",
-        redirectPath,
-      );
       login(user, token, redirectPath);
     } catch (err) {
-      console.error("Login Error Details:", err);
       // إظهار الرسالة القادمة من الباك اند أو رسالة افتراضية
       const errorMessage =
         err.response?.data?.message ||

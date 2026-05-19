@@ -44,7 +44,6 @@ export const AuthProvider = ({ children }) => {
   }, [token]);
 
   const login = (userData, userToken, redirectPath = "/") => {
-    console.log("Login function called, redirecting to:", redirectPath);
     // إزالة الداتا من اللوكال ستوريدج للتنظيف
     localStorage.removeItem("token");
     localStorage.removeItem("user");
@@ -62,7 +61,6 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
-    console.log("Logout function called, reloading to Home");
     // التنظيف من اللوكال ستوريدج والكوكيز
     localStorage.removeItem("token");
     localStorage.removeItem("user");
